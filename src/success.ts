@@ -19,6 +19,7 @@ export async function success(config: TGBotConfig, context: semantic.Context) {
 		commits,
 	} = context;
 	const packageName = config.packageName || SEMANTIC_RELEASE_PACKAGE || npm_package_name;
+	console.info('Discord start success', packageName);
 
 	for (const notification of asArray(config.notifications)) {
 		const notify: boolean = notification.notifyOnSuccess ?? config.notifyOnSuccess ?? true;
