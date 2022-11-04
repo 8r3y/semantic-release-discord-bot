@@ -1,6 +1,6 @@
 {
 	"name": "semantic-release-discord-bot",
-	"version": "1.0.13",
+	"version": "1.1.0",
 	"description": "A discord bot for semantic-release library notifying release statuses",
 	"main": "lib/index.js",
 	"scripts": {
@@ -14,8 +14,20 @@
 		"type": "git",
 		"url": "git+https://github.com/8r3y/semantic-release-discord-bot.git"
 	},
-	"files": ["README.md", "LICENSE", "lib"],
-	"keywords": ["semantic-release", "discord", "bot", "release", "ci", "discord-bot", "semantic-discord-bot"],
+	"files": [
+		"README.md",
+		"LICENSE",
+		"lib"
+	],
+	"keywords": [
+		"semantic-release",
+		"discord",
+		"bot",
+		"release",
+		"ci",
+		"discord-bot",
+		"semantic-discord-bot"
+	],
 	"author": "Skoropad Aleksandr <skoropadas@ya.ru>",
 	"license": "MIT",
 	"bugs": {
@@ -53,7 +65,10 @@
 		}
 	},
 	"lint-staged": {
-		"*.{js,json,md}": ["prettier --write", "git add"],
+		"*.{js,json,md}": [
+			"prettier --write",
+			"git add"
+		],
 		"*.{css,scss,less}": "stylelint --fix",
 		"*.js": "eslint --fix"
 	},
