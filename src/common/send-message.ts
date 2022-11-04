@@ -13,16 +13,16 @@ export async function sendMessage(
 	const body = {
 		username: 'Semantic Release Discord Bot',
 		avatar_url: '',
-		content: message.message,
+		content: 'Test message',
 	};
 
 	return new Promise((resolve, reject) => {
-		console.info('Sending message to Discord', body);
+		console.info('Sending message to Discord', body, message);
 		logger.log(`Sending message to Discord`);
 		request
 			.post(String(discordWebHook), {
 				headers: {'Content-type': 'application/json'},
-				body,
+				body: JSON.stringify(body),
 			})
 			.on('error', e => {
 				logger.log(`Request error handled: ${JSON.stringify(e)}`);
