@@ -23,6 +23,7 @@ export async function success(config: TGBotConfig, context: semantic.Context) {
 
 	for (const notification of asArray(config.notifications)) {
 		const notify: boolean = notification.notifyOnSuccess ?? config.notifyOnSuccess ?? true;
+		console.info('Discord notification', notification);
 
 		if (notify) {
 			const message: TGBotMessage | TGBotMessageTemplate | undefined =
@@ -30,6 +31,7 @@ export async function success(config: TGBotConfig, context: semantic.Context) {
 				config.success ??
 				(nextRelease && defaultSuccessMessage(packageName, nextRelease));
 
+			console.info('Discord notification message', message);
 			if (message && (!notification.branch || micromatch.isMatch(branch.name, notification.branch))) {
 				const renderedMessage: TGBotRenderedMessage = renderMessage(message, {
 					packageName,
@@ -38,7 +40,7 @@ export async function success(config: TGBotConfig, context: semantic.Context) {
 					nextRelease,
 					commits,
 				});
-
+				console.info('Discord notification renderedMessage', renderedMessage);
 				if (!renderedMessage.message) {
 					logger.log('Telegram message is empty. Nothing to send!');
 					continue;

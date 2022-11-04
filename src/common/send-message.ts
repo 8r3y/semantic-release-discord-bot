@@ -17,6 +17,7 @@ export async function sendMessage(
 	};
 
 	return new Promise((resolve, reject) => {
+		console.info('Sending message to Discord', body);
 		logger.log(`Sending message to Discord`);
 		request
 			.post(String(discordWebHook), {
