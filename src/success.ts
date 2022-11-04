@@ -32,7 +32,7 @@ export async function success(config: TGBotConfig, context: semantic.Context) {
 				(nextRelease && defaultSuccessMessage(packageName, nextRelease));
 
 			console.info('Discord notification message', message);
-			if (message && (!notification.branch || micromatch.isMatch(branch.name, notification.branch))) {
+			if (message) {
 				const renderedMessage: TGBotRenderedMessage = renderMessage(message, {
 					packageName,
 					branch,
