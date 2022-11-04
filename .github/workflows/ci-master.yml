@@ -32,6 +32,8 @@ jobs:
       - run: ls -la
       - name: Configure npm
         run: |
-          echo -e 'always-auth=true\n//registry.npmjs.org/:_authToken=${NPM_AUTH_TOKEN}' > .npmrc
+          echo -e 'always-auth=true\n//registry.npmjs.org/:_authToken=${secrets.NPM_AUTH_TOKEN}' > .npmrc
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
       - name: Publish
         run: npm publish
