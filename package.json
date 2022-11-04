@@ -1,6 +1,6 @@
 {
 	"name": "semantic-release-discord-bot",
-	"version": "1.0.0",
+	"version": "1.0.13",
 	"description": "A discord bot for semantic-release library notifying release statuses",
 	"main": "lib/index.js",
 	"scripts": {
@@ -14,20 +14,8 @@
 		"type": "git",
 		"url": "git+https://github.com/8r3y/semantic-release-discord-bot.git"
 	},
-	"files": [
-		"README.md",
-		"LICENSE",
-		"lib"
-	],
-	"keywords": [
-		"semantic-release",
-		"discord",
-		"bot",
-		"release",
-		"ci",
-		"discord-bot",
-		"semantic-discord-bot"
-	],
+	"files": ["README.md", "LICENSE", "lib"],
+	"keywords": ["semantic-release", "discord", "bot", "release", "ci", "discord-bot", "semantic-discord-bot"],
 	"author": "Skoropad Aleksandr <skoropadas@ya.ru>",
 	"license": "MIT",
 	"bugs": {
@@ -40,6 +28,8 @@
 	"devDependencies": {
 		"@commitlint/cli": "^12.1.1",
 		"@commitlint/config-conventional": "^12.1.1",
+		"@semantic-release/changelog": "^6.0.1",
+		"@semantic-release/git": "^10.0.1",
 		"@types/jasmine": "^3.9.1",
 		"@types/node": "^16.10.4",
 		"@types/request": "^2.48.8",
@@ -52,11 +42,9 @@
 		"lint-staged": "^10.5.4",
 		"nyc": "^15.1.0",
 		"prettier": "2.2.1",
+		"semantic-release": "^19.0.5",
 		"ts-node": "^10.3.0",
-		"typescript": "^4.4.4",
-		"@semantic-release/changelog": "^6.0.1",
-		"@semantic-release/git": "^10.0.1",
-		"semantic-release": "^19.0.5"
+		"typescript": "^4.4.4"
 	},
 	"husky": {
 		"hooks": {
@@ -65,19 +53,16 @@
 		}
 	},
 	"lint-staged": {
-		"*.{js,json,md}": [
-			"prettier --write",
-			"git add"
-		],
+		"*.{js,json,md}": ["prettier --write", "git add"],
 		"*.{css,scss,less}": "stylelint --fix",
 		"*.js": "eslint --fix"
 	},
 	"dependencies": {
 		"@semantic-release/error": "^2.2.0",
+		"axios": "^1.1.3",
 		"lodash": "^4.17.21",
 		"micromatch": "^4.0.4",
 		"nunjucks": "^3.2.3",
-		"request": "^2.88.2",
 		"telegramify-markdown": "^1.0.3"
 	}
 }

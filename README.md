@@ -3,8 +3,7 @@
 [**semantic-release**](https://github.com/semantic-release/semantic-release) plugin to get release notifications
 on [Discord](https://discord.com/) from Discord.
 
-[![npm](https://img.shields.io/npm/v/semantic-release-telegram-bot.svg?style=flat-square)](https://www.npmjs.com/package/semantic-release-telegram-bot)
-[![CircleCI branch](https://img.shields.io/circleci/project/github/skoropadas/semantic-release-telegram-bot/master.svg?style=flat-square)](https://circleci.com/gh/skoropadas/semantic-release-telegram-bot)
+[![npm](https://img.shields.io/npm/v/semantic-release-telegram-bot.svg?style=flat-square)](https://www.npmjs.com/package/semantic-release-discord-bot)
 [![license](https://img.shields.io/github/license/skoropadas/semantic-release-telegram-bot.svg?style=flat-square)](https://github.com/skoropadas/semantic-release-telegram-bot/blob/master/LICENSE)
 
 | Step      | Description                                           |
