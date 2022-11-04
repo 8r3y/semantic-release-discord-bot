@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/8r3y/semantic-release-discord-bot/compare/v1.0.0...v1.0.1) (2022-11-04)
+
+
+### Bug Fixes
+
+* added configuring npm ([a7ff484](https://github.com/8r3y/semantic-release-discord-bot/commit/a7ff484b7adec74351a2eb92d83d8c1c1fa94923))
+
 # 1.0.0 (2022-11-04)
 
 
