@@ -1,3 +1,12 @@
+## [1.0.6](https://github.com/8r3y/semantic-release-discord-bot/compare/v1.0.5...v1.0.6) (2022-11-04)
+
+
+### Bug Fixes
+
+* another way to fix autopublish ([78eee22](https://github.com/8r3y/semantic-release-discord-bot/commit/78eee22d53f015cc2b23410b8176a573133fd482))
+* another way to fix autopublish ([2f43665](https://github.com/8r3y/semantic-release-discord-bot/commit/2f436658bd52e3ac5774ab6ff507dd226ac16c96))
+* another way to fix autopublish ([00e861d](https://github.com/8r3y/semantic-release-discord-bot/commit/00e861db5c56ec828ecd19ee21e149223f5b74ef))
+
 ## [1.0.5](https://github.com/8r3y/semantic-release-discord-bot/compare/v1.0.4...v1.0.5) (2022-11-04)
 
 
