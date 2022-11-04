@@ -1,6 +1,6 @@
 {
 	"name": "semantic-release-discord-bot",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "A discord bot for semantic-release library notifying release statuses",
 	"main": "lib/index.js",
 	"scripts": {
