@@ -23,17 +23,11 @@ jobs:
         run: npm ci
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Configure npm
+        run: |
+          echo -e 'always-auth=true\n//registry.npmjs.org/:_authToken=${secrets.NPM_AUTH_TOKEN}' > .npmrc
       - name: Release
         run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Build
-        run: npm run build
-      - run: ls -la
-      - name: Configure npm
-        run: |
-          echo -e 'always-auth=true\n//registry.npmjs.org/:_authToken=${secrets.NPM_AUTH_TOKEN}' > .npmrc
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
-      - name: Publish
-        run: npm publish
+          NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
