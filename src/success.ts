@@ -11,7 +11,7 @@ import {defaultSuccessMessage} from './common/default-success-message';
 export async function success(config: TGBotConfig, context: semantic.Context) {
 	const {
 		logger,
-		env: {SEMANTIC_RELEASE_PACKAGE, npm_package_name},
+		env: {SEMANTIC_RELEASE_PACKAGE, npm_package_name, DISCORD_WEBHOOK},
 		// @ts-ignore
 		branch,
 		lastRelease,
@@ -45,11 +45,7 @@ export async function success(config: TGBotConfig, context: semantic.Context) {
 
 				logger.log(`Sending telegram notification on success (branch = ${notification.branch || 'all'})...`);
 
-				for (let chatId of asArray(notification.chatIds)) {
-					chatId = typeof chatId === 'string' ? process.env[chatId] || chatId : chatId;
-
-					await sendMessage(renderedMessage, chatId, context);
-				}
+				await sendMessage(renderedMessage, DISCORD_WEBHOOK, context);
 			}
 		}
 	}

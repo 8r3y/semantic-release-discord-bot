@@ -1,23 +1,23 @@
-# semantic-release-telegram-bot
+# semantic-release-discord-bot
 
 [**semantic-release**](https://github.com/semantic-release/semantic-release) plugin to get release notifications
-on [telegram](https://telegram.org/) from a telegram bot
+on [Discord](https://discord.com/) from Discord.
 
 [![npm](https://img.shields.io/npm/v/semantic-release-telegram-bot.svg?style=flat-square)](https://www.npmjs.com/package/semantic-release-telegram-bot)
 [![CircleCI branch](https://img.shields.io/circleci/project/github/skoropadas/semantic-release-telegram-bot/master.svg?style=flat-square)](https://circleci.com/gh/skoropadas/semantic-release-telegram-bot)
 [![license](https://img.shields.io/github/license/skoropadas/semantic-release-telegram-bot.svg?style=flat-square)](https://github.com/skoropadas/semantic-release-telegram-bot/blob/master/LICENSE)
 
-| Step      | Description                                            |
-| --------- | ------------------------------------------------------ |
-| `success` | Send a telegram message to notify of a new release.    |
-| `fail`    | Send a telegram message to notify of a failed release. |
+| Step      | Description                                           |
+| --------- | ----------------------------------------------------- |
+| `success` | Send a Discord message to notify of a new release.    |
+| `fail`    | Send a Discord message to notify of a failed release. |
 
 ## Install
 
 Add the plugin to your npm-project:
 
 ```bash
-$ npm install semantic-release-telegram-bot -D
+$ npm install semantic-release-discord-bot -D
 ```
 
 ## Usage
@@ -31,11 +31,10 @@ semantic-release configuration file](https://github.com/semantic-release/semanti
         "@semantic-release/commit-analyzer",
         "@semantic-release/release-notes-generator",
         [
-            "semantic-release-telegram-bot",
+            "semantic-release-discord-bot",
             {
                 "notifications": [
                     {
-                        "chatIds": "123456",
                         "branch": "release/*.x.x"
                     }
                 ]
@@ -47,14 +46,10 @@ semantic-release configuration file](https://github.com/semantic-release/semanti
 
 ## Configuration
 
-### Bot
-
-Create telegram bot using the official [guide](https://core.telegram.org/bots#3-how-do-i-create-a-bot)
-
 ### Environment variables
 
-The `TELEGRAM_BOT_TOKEN` variable can be defined in the environment where you will run semantic release. Copy and past
-the token value to this variable.
+The `DISCORD_WEBHOOK` variable can be defined in the environment where you will run semantic release. Copy and past
+the Discord hook value to this variable.
 
 ### Options
 
@@ -77,7 +72,6 @@ In the `notification` property, you can pass an object with the following values
 | `notifyOnFail`    | Determines if a failed release should trigger a telegram message to be sent. If `false` this plugin does nothing on fail. Can be overwritten by the same property in `notifications`        | no       | false                   |
 | `success`         | Provides a template for the telegram message on success when `notifyOnSuccess` is `true`.                                                                                                   | no       | DEFAULT SUCCESS MESSAGE |
 | `fail`            | Provides a template for the telegram message on fail when `notifyOnFail` is `true`.                                                                                                         | no       | DEFAULT FAIL MESSAGE    |
-| `chatIds`         | One or more telegram chat IDs, you can also pass the name of the environment variable that contains the chat id                                                                             | yes      | undefined               |
 | `branch`          | Describes a pattern for filtering a branch using a glob expression.                                                                                                                         | no       | undefined               |
 
 ### Template options
@@ -118,11 +112,11 @@ A special `context` is available for each message, which provides access to the 
 | `lastRelease` | A lastRelease object. You can find its description [here](https://github.com/semantic-release/semantic-release/blob/master/docs/developer-guide/plugin.md#analyzecommits) |
 | `nextRelease` | A nextRelease object. You can find its description [here](https://github.com/semantic-release/semantic-release/blob/master/docs/developer-guide/plugin.md#verifyrelease)  |
 | `commits`     | A list of commits. You can find its description [here](https://github.com/semantic-release/semantic-release/blob/master/docs/developer-guide/plugin.md#analyzecommits)    |
-| `errors`       | A list of native `Error` objects, available only for `fail` messages                                                                                                      |
+| `errors`      | A list of native `Error` objects, available only for `fail` messages                                                                                                      |
 
 ## Examples
 
-### Sending messages to specific chats
+### ATTENTION - NOT AVAILABLE NOW: Sending messages to specific chats
 
 ```json
 {

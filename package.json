@@ -1,7 +1,7 @@
 {
-	"name": "semantic-release-telegram-bot",
+	"name": "semantic-release-discord-bot",
 	"version": "1.0.0",
-	"description": "A telegram bot for semantic-release library notifying release statuses",
+	"description": "A discord bot for semantic-release library notifying release statuses",
 	"main": "lib/index.js",
 	"scripts": {
 		"test": "nyc -e .ts -x \"*.spec.ts\" jasmine-ts \"**/*.spec.ts\"",
@@ -12,16 +12,16 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/skoropadas/semantic-release-telegram-bot.git"
+		"url": "git+https://github.com/8r3y/semantic-release-discord-bot.git"
 	},
 	"files": ["README.md", "LICENSE", "lib"],
-	"keywords": ["semantic-release", "telegram", "bot", "release", "ci", "telegram-bot", "semantic-release-bot"],
+	"keywords": ["semantic-release", "discord", "bot", "release", "ci", "discord-bot", "semantic-discord-bot"],
 	"author": "Skoropad Aleksandr <skoropadas@ya.ru>",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/skoropadas/semantic-release-telegram-bot/issues"
+		"url": "https://github.com/8r3y/semantic-release-telegram-bot/issues"
 	},
-	"homepage": "https://github.com/skoropadas/semantic-release-telegram-bot#readme",
+	"homepage": "https://github.com/8r3y/semantic-release-telegram-bot#readme",
 	"peerDependencies": {
 		"semantic-release": ">=11.0.0"
 	},
@@ -30,6 +30,7 @@
 		"@commitlint/config-conventional": "^12.1.1",
 		"@types/jasmine": "^3.9.1",
 		"@types/node": "^16.10.4",
+		"@types/request": "^2.48.8",
 		"@types/semantic-release": "^17.2.2",
 		"eslint": "^7.24.0",
 		"husky": "^6.0.0",
@@ -39,7 +40,7 @@
 		"lint-staged": "^10.5.4",
 		"nyc": "^15.1.0",
 		"prettier": "2.2.1",
-		"semantic-release": "^17.4.2",
+		"semantic-release": "^19.0.5",
 		"ts-node": "^10.3.0",
 		"typescript": "^4.4.4"
 	},
@@ -58,8 +59,8 @@
 		"@semantic-release/error": "^2.2.0",
 		"lodash": "^4.17.21",
 		"micromatch": "^4.0.4",
-		"node-telegram-bot-api": "^0.54.0",
 		"nunjucks": "^3.2.3",
+		"request": "^2.88.2",
 		"telegramify-markdown": "^1.0.3"
 	}
 }

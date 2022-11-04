@@ -13,7 +13,7 @@ export async function fail(config: TGBotConfig, context: semantic.Context) {
 		logger,
 		// @ts-ignore
 		errors,
-		env: {SEMANTIC_RELEASE_PACKAGE, npm_package_name},
+		env: {SEMANTIC_RELEASE_PACKAGE, npm_package_name, DISCORD_WEBHOOK},
 		// @ts-ignore
 		branch,
 		lastRelease,
@@ -27,9 +27,7 @@ export async function fail(config: TGBotConfig, context: semantic.Context) {
 
 		if (notify) {
 			const message: TGBotMessage | TGBotMessageTemplate | undefined =
-				notification.fail ??
-				config.fail ??
-				(nextRelease && defaultFailMessage(packageName, errors));
+				notification.fail ?? config.fail ?? (nextRelease && defaultFailMessage(packageName, errors));
 
 			if (message && (!notification.branch || micromatch.isMatch(branch.name, notification.branch))) {
 				const renderedMessage: TGBotRenderedMessage = renderMessage(message, {
@@ -38,16 +36,12 @@ export async function fail(config: TGBotConfig, context: semantic.Context) {
 					lastRelease,
 					nextRelease,
 					commits,
-					errors
+					errors,
 				});
 
 				logger.log(`Sending telegram notification on fail (branch = ${notification.branch || 'all'})...`);
 
-				for (let chatId of asArray(notification.chatIds)) {
-					chatId = typeof chatId === 'string' ? process.env[chatId] || chatId : chatId;
-
-					await sendMessage(renderedMessage, chatId, context);
-				}
+				await sendMessage(renderedMessage, DISCORD_WEBHOOK, context);
 			}
 		}
 	}
