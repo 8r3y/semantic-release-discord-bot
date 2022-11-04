@@ -7,7 +7,7 @@ function getPlugins() {
 			'@semantic-release/commit-analyzer',
 			'@semantic-release/release-notes-generator',
 			['@semantic-release/changelog', {changelogFile: 'CHANGELOG.md'}],
-			['@semantic-release/npm', {npmPublish: true, tarballDir: 'lib'}],
+			['@semantic-release/npm', {npmPublish: true, pkgRoot: 'lib'}],
 			[
 				'@semantic-release/git',
 				{
