@@ -1,3 +1,10 @@
+## [1.0.14](https://github.com/8r3y/semantic-release-discord-bot/compare/v1.0.13...v1.0.14) (2022-11-04)
+
+
+### Bug Fixes
+
+* updated description ([52afddb](https://github.com/8r3y/semantic-release-discord-bot/commit/52afddbf598b11af33510feb3a83b4078edd6de7))
+
 ## [1.0.13](https://github.com/8r3y/semantic-release-discord-bot/compare/v1.0.12...v1.0.13) (2022-11-04)
 
 
