@@ -1,7 +1,7 @@
 import {TGBotConfig} from './interfaces/config';
 import * as semantic from 'semantic-release';
 import {asArray} from './helpers/as-array';
-import * as micromatch from 'micromatch';
+// import * as micromatch from 'micromatch';
 import {TGBotMessage, TGBotMessageTemplate} from './interfaces/message';
 import {renderMessage} from './common/render-message';
 import {TGBotRenderedMessage} from './interfaces/rendered-message';
