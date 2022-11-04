@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/8r3y/semantic-release-discord-bot/compare/v1.0.1...v1.0.2) (2022-11-04)
+
+
+### Bug Fixes
+
+* added npmrc to gitignore ([e361885](https://github.com/8r3y/semantic-release-discord-bot/commit/e3618850a02850afb1d41a89ef824b98ad806da7))
+
 ## [1.0.1](https://github.com/8r3y/semantic-release-discord-bot/compare/v1.0.0...v1.0.1) (2022-11-04)
 
 
