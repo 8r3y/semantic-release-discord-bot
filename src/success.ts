@@ -42,6 +42,7 @@ export async function success(config: TGBotConfig, context: semantic.Context) {
 				});
 				console.info('Discord notification renderedMessage', renderedMessage);
 				if (!renderedMessage.message) {
+					console.info('Discord notification Telegram message is empty. Nothing to send!', renderedMessage);
 					logger.log('Telegram message is empty. Nothing to send!');
 					continue;
 				}
